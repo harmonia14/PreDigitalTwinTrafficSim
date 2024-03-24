@@ -2,7 +2,7 @@ import json
 import math
 
 sumoBinary = "sumo-gui"
-SUMO_CMD =[sumoBinary, "-c", "ITSC2020_CAV_impact/workspace/M50_simulation.sumo.cfg",
+SUMO_CMD =[sumoBinary, "-c", "../ITSC2020_CAV_impact/Motorway/Simulations/Base/M50_simulation.sumo.cfg",
             "--statistic-output", "statistic.xml", "--tripinfo-output", "tripinfo.xml", "--tripinfo-output.write-unfinished", "--delay", "1000", "--full-output", "fulloutput.xml"]
 DECODING = (lambda v: json.loads(v))
 BROKER1_IP = 'localhost'

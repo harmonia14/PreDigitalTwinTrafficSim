@@ -271,8 +271,8 @@ def run():
     route_list = []
     vehicle_list = []
     probe_vehicle_dict = {}
-    net = sumolib.net.readNet("ITSC2020_CAV_impact/workspace/M50network.net.xml")
-    for vehicle in sumolib.xml.parse("ITSC2020_CAV_impact/workspace/M50_routes.rou.xml", "routes"):
+    net = sumolib.net.readNet("../ITSC2020_CAV_impact/Motorway/Simulations/Base/M50network.net.xml")
+    for vehicle in sumolib.xml.parse("../ITSC2020_CAV_impact/Motorway/Simulations/Base/M50_routes.rou.xml", "routes"):
         route_list.append(vehicle)
 
     consumer = KafkaConsumer(bootstrap_servers=BROKER_EP, value_deserializer=DECODING, consumer_timeout_ms=1000)
