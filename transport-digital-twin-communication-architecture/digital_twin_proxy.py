@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.11
+
 from kafka import KafkaConsumer
 from constants import DECODING, BROKER_EP
 import file_tools as file

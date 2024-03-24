@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.11
+
 from kafka import KafkaConsumer, KafkaProducer
 from constants import DECODING, BROKER_EP, ENTERPRISE_EP, ENCODING, TOPIC_LOOKUP
 from kafka_helper import getPartition
