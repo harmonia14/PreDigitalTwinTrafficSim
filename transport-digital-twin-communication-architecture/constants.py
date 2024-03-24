@@ -24,18 +24,18 @@ ENTERPRISE_TOPICS = ["enterprise_probe_vehicles","enterprise_motorway_cameras","
 TOPIC_LOOKUP = { "enterprise_probe_vehicles":"probe_vehicles", 
                 "enterprise_motorway_cameras":"motorway_cameras",
                 "enterprise_toll_bridge_cameras":"toll_bridge_cameras"}
-M50_NORTHBOUND_PATH = r'consumed_topics\inductive_loops\0.txt'
+M50_NORTHBOUND_PATH = r'consumed_topics/inductive_loops/0.txt'
 NB_PARTITION = int(0)
-M50_SOUTHBOUND_PATH = r'consumed_topics\inductive_loops\1.txt'
+M50_SOUTHBOUND_PATH = r'consumed_topics/inductive_loops/1.txt'
 SB_PARTITION = int(1)
 
 #SUMO
 SIMULATION_DURATION = 0 + 3600 #3600 seconds = 1 hour
 
-pathToConfigs = '\ITSC2020_CAV_impact\ITSC2020_CAV_impact\workspace'
+pathToConfigs = '../ITSC2020_CAV_impact/Motorway/Simulations/Base/'
 currentPath = str(pathlib.Path().resolve())
 sumoBinary = "sumo-gui"
-SUMO_CMD = [sumoBinary, "-c", currentPath+pathToConfigs+"\M50_simulation.sumo.cfg"]
+SUMO_CMD = [sumoBinary, "-c", currentPath+pathToConfigs+"/M50_simulation.sumo.cfg"]
 truckVehicleTypes = ["CAT4", "CAT2", "HDT"]
 passengerVehicleTypes = ["CAV4", "CAV2", "HDC"]
 autonomousVehicles = ["CAV4", "CAV2", "CAT4", "CAT2"] #equates to 20% of vehicles
