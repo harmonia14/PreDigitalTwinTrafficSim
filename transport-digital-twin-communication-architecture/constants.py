@@ -35,7 +35,7 @@ SIMULATION_DURATION = 0 + 3600 #3600 seconds = 1 hour
 pathToConfigs = '../ITSC2020_CAV_impact/Motorway/Simulations/Base/'
 currentPath = str(pathlib.Path().resolve())
 sumoBinary = "sumo-gui"
-SUMO_CMD = [sumoBinary, "-c", currentPath+pathToConfigs+"/M50_simulation.sumo.cfg"]
+SUMO_CMD = [sumoBinary, "-c", currentPath+"/"+pathToConfigs+"/M50_simulation.sumo.cfg"]
 truckVehicleTypes = ["CAT4", "CAT2", "HDT"]
 passengerVehicleTypes = ["CAV4", "CAV2", "HDC"]
 autonomousVehicles = ["CAV4", "CAV2", "CAT4", "CAT2"] #equates to 20% of vehicles

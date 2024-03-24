@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.11
+
 from kafka import KafkaProducer
 from constants import BROKER_EP, ENTERPRISE_EP, ENCODING, SUMO_CMD, M50_Northbound, M50_Southbound, NB_PARTITION, SB_PARTITION, SIMULATION_DURATION, KAFKA_VERSION
 from kafka_helper import sendCamData, sendProbeData, sendTollData, sendData, initTopics
