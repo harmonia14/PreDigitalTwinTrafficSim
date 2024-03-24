@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/Users/harmoniewong/studio/DigitalTwinTrafficSim/transport-digital-twin-communication-architecture/./simulation.py", line 47, in <module>
+    nCount = appendLoopCount(M50_Northbound, nCount)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/harmoniewong/studio/DigitalTwinTrafficSim/transport-digital-twin-communication-architecture/sumo_helper.py", line 107, in appendLoopCount
+    return np.add(currentCount, getLoopLaneCounts(loopID))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/harmoniewong/studio/DigitalTwinTrafficSim/transport-digital-twin-communication-architecture/sumo_helper.py", line 103, in getLoopLaneCounts
+    counts.append(traci.inductionloop.getLastStepVehicleNumber(loopID[i]))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/traci/_inductionloop.py", line 69, in getLastStepVehicleNumber
+    return self._getUniversal(tc.LAST_STEP_VEHICLE_NUMBER, loopID)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/traci/domain.py", line 147, in _getUniversal
+    return _parse(self._retValFunc, varID, self._getCmd(varID, objectID, format, *values))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/traci/domain.py", line 152, in _getCmd
+    r = self._connection._sendCmd(self._cmdGetID, varID, objID, format, *values)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/traci/connection.py", line 231, in _sendCmd
+    return self._sendExact()
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/traci/connection.py", line 144, in _sendExact
+    raise TraCIException(err, prefix[1], _RESULTS[prefix[2]])
+traci.exceptions.TraCIException: Induction loop 'M50_Northbound-1' is not known

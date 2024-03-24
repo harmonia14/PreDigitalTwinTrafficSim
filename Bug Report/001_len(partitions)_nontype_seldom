@@ -1,0 +1,14 @@
+simulation.py
+Traceback (most recent call last):
+  File "/Users/harmoniewong/studio/DigitalTwinTrafficSim/transport-digital-twin-communication-architecture/./simulation.py", line 30, in <module>
+    initTopics()
+  File "/Users/harmoniewong/studio/DigitalTwinTrafficSim/transport-digital-twin-communication-architecture/kafka_helper.py", line 57, in initTopics
+    createTopics(topics, BROKER_EP)  
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/harmoniewong/studio/DigitalTwinTrafficSim/transport-digital-twin-communication-architecture/kafka_helper.py", line 19, in createTopics
+    print("partitions:", get_partitions_number(broker, topic.name))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/harmoniewong/studio/DigitalTwinTrafficSim/transport-digital-twin-communication-architecture/kafka_helper.py", line 40, in get_partitions_number
+    return len(partitions)
+           ^^^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
