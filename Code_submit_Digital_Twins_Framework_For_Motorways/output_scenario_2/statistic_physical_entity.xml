@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-08-19 15:27:23 by Eclipse SUMO GUI Version 1.14.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="D:\MSC-DS\Dissertation\Conor\Connor_Project_Git\transport-digital-twin-communication-architecture\ITSC2020_CAV_impact\workspace\M50network.net.xml"/>
+        <additional-files value="D:\MSC-DS\Dissertation\Conor\Connor_Project_Git\transport-digital-twin-communication-architecture\ITSC2020_CAV_impact\workspace\vtypes.add.xml,D:\MSC-DS\Dissertation\Conor\Connor_Project_Git\transport-digital-twin-communication-architecture\ITSC2020_CAV_impact\workspace\M50_routes.rou.xml,D:\MSC-DS\Dissertation\Conor\Connor_Project_Git\transport-digital-twin-communication-architecture\ITSC2020_CAV_impact\workspace\M50_emitters.emi.xml,D:\MSC-DS\Dissertation\Conor\Connor_Project_Git\transport-digital-twin-communication-architecture\ITSC2020_CAV_impact\workspace\M50_detectors.poi.xml,D:\MSC-DS\Dissertation\Conor\Connor_Project_Git\transport-digital-twin-communication-architecture\ITSC2020_CAV_impact\workspace\outputs.add.xml"/>
+    </input>
+
+    <output>
+        <netstate-dump value="output/nestate.xml"/>
+        <full-output value="output/fulloutput.xml"/>
+        <tripinfo-output value="output/tripinfo.xml"/>
+        <tripinfo-output.write-unfinished value="true"/>
+        <statistic-output value="output/statistic.xml"/>
+    </output>
+
+    <time>
+        <begin value="68400"/>
+        <end value="86400"/>
+        <step-length value="0.5"/>
+    </time>
+
+    <processing>
+        <collision.mingap-factor value="0"/>
+        <emergencydecel.warning-threshold value="5"/>
+    </processing>
+
+    <ssm_device>
+        <device.ssm.probability value="1"/>
+        <device.ssm.deterministic value="true"/>
+        <device.ssm.measures value="TTC PET"/>
+        <device.ssm.thresholds value="1.5 2"/>
+        <device.ssm.trajectories value="false"/>
+        <device.ssm.range value="50"/>
+        <device.ssm.extratime value="5"/>
+        <device.ssm.file value="output/ssm.out.xml"/>
+        <device.ssm.geo value="true"/>
+    </ssm_device>
+
+    <traci_server>
+        <remote-port value="57790"/>
+    </traci_server>
+
+</configuration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+    <vehicles loaded="49742" inserted="2957" running="1190" waiting="0"/>
+    <teleports total="0" jam="0" yield="0" wrongLane="0"/>
+    <safety collisions="0" emergencyStops="0"/>
+    <persons loaded="0" running="0" jammed="0"/>
+    <vehicleTripStatistics routeLength="4021.69" speed="20.85" duration="187.47" waitingTime="0.01" timeLoss="14.07" departDelay="0.41" departDelayWaiting="0.00" totalTravelTime="554358.50" totalDepartDelay="1229.52"/>
+    <pedestrianStatistics number="0" routeLength="0.00" duration="0.00" timeLoss="0.00"/>
+    <rideStatistics number="0"/>
+    <transportStatistics number="0"/>
+</statistics>

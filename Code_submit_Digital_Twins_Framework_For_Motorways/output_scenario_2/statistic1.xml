@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-08-19 15:27:33 by Eclipse SUMO GUI Version 1.14.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="ITSC2020_CAV_impact/workspace/M50network.net.xml"/>
+        <additional-files value="ITSC2020_CAV_impact/workspace/vtypes.add.xml,ITSC2020_CAV_impact/workspace/M50_routes.rou.xml,ITSC2020_CAV_impact/workspace/M50_detectors.poi.xml,ITSC2020_CAV_impact/workspace/outputs.add.xml"/>
+    </input>
+
+    <output>
+        <full-output value="fulloutput.xml"/>
+        <tripinfo-output value="tripinfo.xml"/>
+        <tripinfo-output.write-unfinished value="true"/>
+        <statistic-output value="statistic.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="86400"/>
+        <step-length value="0.5"/>
+    </time>
+
+    <processing>
+        <collision.mingap-factor value="0"/>
+        <emergencydecel.warning-threshold value="5"/>
+    </processing>
+
+    <ssm_device>
+        <device.ssm.probability value="1"/>
+        <device.ssm.deterministic value="true"/>
+        <device.ssm.measures value="TTC PET"/>
+        <device.ssm.thresholds value="1.5 2"/>
+        <device.ssm.trajectories value="false"/>
+        <device.ssm.range value="50"/>
+        <device.ssm.extratime value="5"/>
+        <device.ssm.file value="output/ssm.out.xml"/>
+        <device.ssm.geo value="true"/>
+    </ssm_device>
+
+    <traci_server>
+        <remote-port value="57817"/>
+    </traci_server>
+
+    <gui_only>
+        <delay value="1000"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+    <vehicles loaded="3651" inserted="3651" running="925" waiting="0"/>
+    <teleports total="3" jam="2" yield="0" wrongLane="0"/>
+    <safety collisions="1" emergencyStops="1"/>
+    <persons loaded="0" running="0" jammed="0"/>
+    <vehicleTripStatistics routeLength="342.18" speed="13.93" duration="508.42" waitingTime="0.19" timeLoss="5.08" departDelay="0.00" departDelayWaiting="0.00" totalTravelTime="1856227.50" totalDepartDelay="0.00"/>
+    <pedestrianStatistics number="0" routeLength="0.00" duration="0.00" timeLoss="0.00"/>
+    <rideStatistics number="0"/>
+    <transportStatistics number="0"/>
+</statistics>
