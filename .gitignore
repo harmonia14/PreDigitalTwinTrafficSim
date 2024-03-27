@@ -1,2 +1,8 @@
 todo_list.md
 .DS_Store
+__pycache__
+
+# Ignore the result outut of project Digital Twin Communication Architecture.
+transport-digital-twin-communication-architecture/consumed_topics/
+transport-digital-twin-communication-architecture/test_results/
+
