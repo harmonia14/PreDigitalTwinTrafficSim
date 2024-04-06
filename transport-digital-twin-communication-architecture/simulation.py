@@ -50,8 +50,8 @@ while True:
                 sCount = appendLoopCount(M50_Southbound, sCount)
             
             except traci.TraCIException as traci_except:
-                    print("Traffic Control Exception:", traci_except)
-                    has_inductive_loops = False
+                print("Traffic Control Exception:", traci_except)
+                has_inductive_loops = False
 
             if t%1 == 0:
                 sendProbeData(vehIDs, probe_producer, timestamp, "enterprise_probe_vehicles") 
