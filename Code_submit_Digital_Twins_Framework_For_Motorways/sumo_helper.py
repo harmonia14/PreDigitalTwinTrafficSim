@@ -57,7 +57,7 @@ def calculate_points_and_angle(x, y, edges, direction):
     return min_points, angle
 
 
-net = sumolib.net.readNet("ITSC2020_CAV_impact/workspace/M50network.net.xml")
+net = sumolib.net.readNet("../ITSC2020_CAV_impact/Motorway/Simulations/Base/M50network.net.xml")
 
 
 def calculate_camera_values():

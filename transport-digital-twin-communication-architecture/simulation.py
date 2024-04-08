@@ -44,15 +44,23 @@ while True:
             t = traci.simulation.getTime()
             timestamp = getTimeStamp(date, t)
             
-            nCount = appendLoopCount(M50_Northbound, nCount)
-            sCount = appendLoopCount(M50_Southbound, sCount)
+            has_inductive_loops = True
+            try:
+                nCount = appendLoopCount(M50_Northbound, nCount)
+                sCount = appendLoopCount(M50_Southbound, sCount)
+            
+            except traci.TraCIException as traci_except:
+                print("Traffic Control Exception:", traci_except)
+                has_inductive_loops = False
 
             if t%1 == 0:
                 sendProbeData(vehIDs, probe_producer, timestamp, "enterprise_probe_vehicles") 
                 sendCamData(vehIDs, camera_producer, timestamp, "enterprise_motorway_cameras")
                 sendTollData(vehIDs, toll_producer, timestamp, "enterprise_toll_bridge_cameras") 
-                sendData(getLoopData(M50_Northbound, timestamp, nCount), north_loop_producer, "inductive_loops", NB_PARTITION)
-                sendData(getLoopData(M50_Southbound, timestamp, sCount), south_loop_producer, "inductive_loops", SB_PARTITION)
+
+                if has_inductive_loops:
+                    sendData(getLoopData(M50_Northbound, timestamp, nCount), north_loop_producer, "inductive_loops", NB_PARTITION)
+                    sendData(getLoopData(M50_Southbound, timestamp, sCount), south_loop_producer, "inductive_loops", SB_PARTITION)
                 sCount = [0,0,0,0]
                 nCount = [0,0,0,0]
 
