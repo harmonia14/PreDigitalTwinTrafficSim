@@ -3,6 +3,16 @@
 
 <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
     
+	<inductionLoop id="M50_Northbound-1" lane="360361373.2643_0" pos="193.00" freq="1" file="out.xml"/>
+    <inductionLoop id="M50_Northbound-2" lane="360361373.2643_1" pos="193.00" freq="1" file="out.xml"/>
+    <inductionLoop id="M50_Northbound-3" lane="360361373.2643_2" pos="193.00" freq="1" file="out.xml"/>
+    <inductionLoop id="M50_Northbound-4" lane="360361373.2643_3" pos="193.00" freq="1" file="out.xml"/>
+   
+    <inductionLoop id="M50_Southbound-4" lane="48290550_3" pos="550.00" freq="1" file="out.xml"/>
+    <inductionLoop id="M50_Southbound-3" lane="48290550_2" pos="550.00" freq="1" file="out.xml"/>
+    <inductionLoop id="M50_Southbound-2" lane="48290550_1" pos="550.00" freq="1" file="out.xml"/>
+    <inductionLoop id="M50_Southbound-1" lane="48290550_0" pos="550.00" freq="1" file="out.xml"/>
+
 	<vType id="CAT4" vClass="truck" speedDev="0.05" carFollowModel="IDM" minGap="1" tau="0.5" sigma="0.05" probability="0"/>
 	<vType id="CAT2" vClass="truck" speedDev="0.05" carFollowModel="IDM" minGap="1.5" tau="0.8" sigma="0.05" lcStrategic="0.5" probability="0"/>
 	<vType id="HDT" vClass="truck" lcStrategic="0.5" probability="1" />
