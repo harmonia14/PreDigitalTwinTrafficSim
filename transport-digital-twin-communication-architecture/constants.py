@@ -30,7 +30,8 @@ M50_SOUTHBOUND_PATH = r'consumed_topics/inductive_loops/1.txt'
 SB_PARTITION = int(1)
 
 #SUMO
-SIMULATION_DURATION = 0 + 3600 #3600 seconds = 1 hour
+# SIMULATION_DURATION = 0 + 3600 #3600 seconds = 1 hour
+SIMULATION_DURATION = 24 * 60 * 60
 
 pathToConfigs = '../ITSC2020_CAV_impact/Motorway/Simulations/Base/'
 currentPath = str(pathlib.Path().resolve())

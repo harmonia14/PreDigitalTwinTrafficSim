@@ -2,8 +2,8 @@ import json
 import math
 
 sumoBinary = "sumo-gui"
-SUMO_CMD =[sumoBinary, "-c", "../ITSC2020_CAV_impact/Motorway/Simulations/Base/M50_simulation.sumo.cfg",
-            "--statistic-output", "statistic.xml",
+SUMO_CMD =[sumoBinary, "-c", "../ITSC2020_CAV_impact/Motorway/Simulations/Base/M50_simulation_1.sumo.cfg",
+            "--statistic-output", "statistic1.xml",
             "--tripinfo-output", "tripinfo.xml",
             "--tripinfo-output.write-unfinished",
             "--delay", "1000",
