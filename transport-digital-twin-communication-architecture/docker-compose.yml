@@ -13,7 +13,7 @@ services:
 
 
   kafkaDT:
-    image: 'confluentinc/cp-kafka:5.5.0'
+    image: 'confluentinc/cp-kafka:7.6.1'
     container_name: 'kafkaDT'
     hostname: 'kafka1'
     ports:
@@ -29,7 +29,7 @@ services:
       - zookeeper
 
   kafkaEnt:
-    image: 'confluentinc/cp-kafka:5.5.0'
+    image: 'confluentinc/cp-kafka:7.6.1'
     container_name: 'kafkaEnt'
     hostname: 'kafka2'
     ports:
