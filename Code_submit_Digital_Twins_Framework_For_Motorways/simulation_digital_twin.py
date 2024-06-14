@@ -33,6 +33,21 @@ from sumo_helper import *
 from sumolib import checkBinary  # noqa
 import traci  # noqa
 
+def getSimulationTimeCfg(filepath: str) -> dict:
+    from xml.etree import ElementTree as ET
+
+    result = {'begin': 0.0, 'end': 0.0, 'step_len': 0.0}
+    xmltree = ET.parse(filepath)
+    xmlroot = xmltree.getroot()
+    timecfg = xmlroot.find('./time')
+    if not timecfg:
+        return result
+
+    result['begin'] = float(timecfg.find('begin').get('value'))
+    result['end'] = float(timecfg.find('end').get('value'))
+    result['step_len'] = float(timecfg.find('step-length').get('value'))
+    return result
+
 
 def addProbeVehicleToSimulation(data_dic, net, vehicle_list, probe_vehicle_dict, i, route_list):
     try:
@@ -279,11 +294,21 @@ def run():
     consumer.subscribe(topics=TOPIC)
     i = 1
     record_empty = 0
+
+    simulateEndTime = getSimulationTimeCfg(SUMO_CFG)['end']
+    if not simulateEndTime:
+        simulateEndTime = 24*60*60
+
     while True:
+        if traci.simulation.getTime() >= simulateEndTime:
+            break
+
         records = consumer.poll(1000)
         if len(records) > 0:
             record_empty = 0
             for key, value in records.items():
+                if traci.simulation.getTime() >= simulateEndTime:
+                    break
 
                 message = value[0].value
                 if key.topic == "probe_vehicles":

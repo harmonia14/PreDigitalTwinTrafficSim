@@ -1,12 +1,27 @@
 #!/usr/bin/env python3.11
 
 from kafka import KafkaProducer
-from constants import BROKER_EP, ENTERPRISE_EP, ENCODING, SUMO_CMD, M50_Northbound, M50_Southbound, NB_PARTITION, SB_PARTITION, SIMULATION_DURATION, KAFKA_VERSION
+from constants import BROKER_EP, ENTERPRISE_EP, ENCODING, SUMO_CMD, M50_Northbound, M50_Southbound, NB_PARTITION, SB_PARTITION, SIMULATION_DURATION, KAFKA_VERSION, SUMO_CFG
 from kafka_helper import sendCamData, sendProbeData, sendTollData, sendData, initTopics
 from sumo_helper import SUMO_HOME_TOOLS, getTimeStamp, appendLoopCount, getLoopData
 from datetime import date, datetime
 import file_tools as file
 import traci, time
+
+def getSimulationTimeCfg(filepath: str) -> dict:
+    from xml.etree import ElementTree as ET
+
+    result = {'begin': 0.0, 'end': 0.0, 'step_len': 0.0}
+    xmltree = ET.parse(filepath)
+    xmlroot = xmltree.getroot()
+    timecfg = xmlroot.find('./time')
+    if not timecfg:
+        return result
+
+    result['begin'] = float(timecfg.find('begin').get('value'))
+    result['end'] = float(timecfg.find('end').get('value'))
+    result['step_len'] = float(timecfg.find('step-length').get('value'))
+    return result
 
 SUMO_HOME_TOOLS() #checks for sumo dependancy
 
@@ -28,6 +43,10 @@ print("Connected to enterprise cluster at:", ENTERPRISE_EP)
 
 date = date.today()
 initTopics()
+
+simu_end_time = getSimulationTimeCfg(SUMO_CFG)['end']
+if simu_end_time:
+     SIMULATION_DURATION = simu_end_time
 
 while True:
         print("Waiting to start simulation...")
@@ -71,4 +90,5 @@ while True:
         file.writeTestInfoToFile(end_time, real_duration_s, SIMULATION_DURATION, BROKER_EP, ENTERPRISE_EP)
         
         traci.close()
+        break
 

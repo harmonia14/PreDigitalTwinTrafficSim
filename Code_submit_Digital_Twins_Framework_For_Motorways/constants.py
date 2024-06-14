@@ -1,8 +1,10 @@
 import json
 import math
+import pathlib
 
 sumoBinary = "sumo-gui"
-SUMO_CMD =[sumoBinary, "-c", "../ITSC2020_CAV_impact/Motorway/Simulations/Base/M50_simulation_1.sumo.cfg",
+SUMO_CFG = str(pathlib.Path().resolve()) + "/../ITSC2020_CAV_impact/Motorway/Simulations/Base/M50_simulation_1.sumo.cfg"
+SUMO_CMD =[sumoBinary, "-c", SUMO_CFG,
             "--statistic-output", "statistic1.xml",
             "--tripinfo-output", "tripinfo.xml",
             "--tripinfo-output.write-unfinished",
